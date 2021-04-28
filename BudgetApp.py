@@ -10,28 +10,35 @@ class BudgetApp():
         self.deposit_list = []
 
         self.prompt_deposit()
+        
     def deposit_ask(self):
         add_deposit = input('Add a deposit category? [y/n]: ')
         return add_deposit
+    
     def deposit_sum(self):
         self.deposit = sum(self.deposit_list)
+        
     def withdrawal_ask(self):
         add_withdrawal = input('Add withdrawal category? [y/n]: ')
         return add_withdrawal
+    
     def withdrawal_sum(self):
         self.withdrawals = sum(self.withdrawal_list)
+        
     def deposit_check(self):
         if not self.deposit_list:
             print('Please enter atleast one deposit category. ')
             self.prompt_deposit()
         else:
             return
+        
     def withdrawal_check(self):
         if not self.withdrawal_list:
             print('Please enter atleast one withdrawal caegory. ')
             self.prompt_withdrawal()
         else:
             return
+        
     def prompt_deposit(self):
         x = False
         while not x:
@@ -52,6 +59,7 @@ class BudgetApp():
             print(k + ': ', 'NGN' + str(depositdict[k]))
         print('Total user deposit: ', 'NGN' + str(self.deposit))
         self.prompt_withdrawal()
+        
     def prompt_withdrawal(self):
         x = False
         while not x:
